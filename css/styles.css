@@ -1,3 +1,7 @@
 body {
 	font-family: 'Trebuchet MS', sans-serif;		
 }
+
+.form-text {
+	padding: 3px 0px;
+}
