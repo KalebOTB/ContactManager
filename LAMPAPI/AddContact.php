@@ -1,10 +1,10 @@
 <?php
 	$inData = getRequestInfo();
 	
-	$firstName = $inData["firstName"];
-	$lastName = $inData["lastName"];
+	$firstName = $inData["first"];
+	$lastName = $inData["last"];
 	$email = $inData["email"];
-	$phoneNumber = $inData["phoneNumber"];
+	$phoneNumber = $inData["phone"];
 	$userId = $inData["userId"];
 
 	$conn = new mysqli("localhost", "TheManager", "COP4331", "ContactManager");
@@ -15,7 +15,7 @@
 	else
 	{
 		$sql = "INSERT INTO List (FirstName, LastName, Email, PhoneNumber, UserID)
-		VALUES ('$firstName', '$lastName', '$email', '$phoneNumber', '$userId' )";
+		VALUES ('" . $firstName ."', '" . $lastName ."', '". $email ."', '" . $phoneNumber ."', '". $userId ."' )";
 		
 		if ($conn->query($sql) === TRUE) {
 			echo "New contact created successfully";

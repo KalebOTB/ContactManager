@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>Contact Manager</title>
+ 		<link href="css/styles.css" rel="stylesheet">
+ 		<script src="js/code.js"></script>
+		<script>window.onload = readCookie</script>
+ 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<header id="CM-header">
+		<div id="userName"></div>
+		<button type="button" onclick="doLogout()">Log out</button>
+	</header>
+	<body>
+		<div class="form-container" id="search-container">
+			<h3>Search for a contact</h3>
+			<form id="search-form">
+				<label for="addFirstName">First Name:</label>
+				<input type="text" id= "s-firstName" name="addFirstName"/>
+				<label for="addLastName">Last Name:</label>
+				<input type="text" id= "s-lastName" name="addLastName"/>
+				<label for="addEmail">Email:</label>
+				<input type="text" id= "s-email" name="addEmail"/>
+				<label for="addPhone">Phone Number:</label>
+				<input type="tel" id= "s-phoneNum" name="addPhone" pattern="[0-9]{3}[0-9]{2}[0-9]{3}"/>
+        			<button type="button" id="searchContactButton" class="buttons" onclick="searchContact();"> Search </button>
+				<div id="contactSearchResult">
+					<div id="contactMessage"></div>
+					<div id="contactList"></div>
+				</div>
+			</form>
+		</div>
+   		<div class="form-container" id="add-container">
+			<h3>Add a contact</h3>
+			<form id="add-form">
+			        <label for="addFirstName">First Name:</label>
+                                <input type="text" id= "a-firstName" name="addFirstName"/>
+                                <label for="addLastName">Last Name:</label>
+                                <input type="text" id= "a-lastName" name="addLastName"/>
+                                <label for="addEmail">Email:</label>
+                                <input type="text" id= "a-email" name="addEmail"/>
+                                <label for="addPhone">Phone Number:</label>
+                                <input type="tel" id= "a-phoneNum" name="addPhone" pattern="[0-9]{3}[0-9]{2}[0-9]{3}"/>
+        			<button type="button" id="addContactButton" class="buttons" onclick="addContact();"> Add Contact </button>
+                        	<div id="contactAddResult"></div>
+			</form>
+		</div>
+	</body>
+</html>
