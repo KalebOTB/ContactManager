@@ -1,11 +1,43 @@
 <html>
 <head>
-	<title>Contact Manager</title>
-	<link href="css/styles.css" rel="stylesheet">
+  <title>Contact Manager</title>
+  <link href="css/styles.css" rel="stylesheet">
+  <script src="js/code.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-	<header>
-	</header>
-	<h2>Contact Manager</h2>
+  <div class="form-container" id="login-container">
+    <h3>Contact Manager</h3>
+    <form id="login-form" action="">
+      <label for="l-username">Username:</label>
+      <input id="loginName" type="text" name="l-username"/>
+      <label for="l-password">Password:</label>
+      <input id="loginPassword" type="password" name="l-password"/>
+      <button type="button" onclick="doLogin()">Login</button>
+      <div id="loginResult"></div>
+      <div>Need an account?</div>
+      <a onclick="switchIndexForm(0)">Register</a>
+    </form>
+  </div>
+  <div class="form-container" id="register-container">
+    <h3>Contact Manager</h3>
+    <form id="register-form" action="">
+      <label for="r-first-name">First Name:</label>
+      <input type="text" name="r-first-name"/>
+      <label for="r-last-name">Last Name:</label>
+      <input type="text" name="r-Last-name"/>
+      <label for="r-email">Email:</label>
+      <input type="text" name="r-email"/>
+      <label for="r-phone">Phone Number:</label>
+      <input type="text" name="r-phone"/>
+      <label for="r-username">Username:</label>
+      <input type="text" name="r-username"/>
+      <label for="r-password">Password:</label>
+      <input type="password" name="r-password"/>
+      <button type="button" onclick="">Register</button>
+      <div>Already have an account?</div>
+      <a onclick="switchIndexForm(1)">Login</a>
+    </form>
+  </div>
 </body>
 </html>
