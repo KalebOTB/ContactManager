@@ -23,21 +23,32 @@
     <h3>Contact Manager</h3>
     <form id="register-form" action="">
       <label for="r-first-name">First Name:</label>
-      <input type="text" name="r-first-name"/>
+      <input type="text" name="r-first-name" id="registerFirstName"/>
       <label for="r-last-name">Last Name:</label>
-      <input type="text" name="r-Last-name"/>
+      <input type="text" name="r-Last-name" id="registerLastName"/>
       <label for="r-email">Email:</label>
-      <input type="text" name="r-email"/>
+      <input type="text" name="r-email" id="registerEmail"/>
       <label for="r-phone">Phone Number:</label>
-      <input type="text" name="r-phone"/>
+      <input type="text" name="r-phone" id="registerPhone"/>
       <label for="r-username">Username:</label>
-      <input type="text" name="r-username"/>
+      <input type="text" name="r-username" id="registerUsername"/>
       <label for="r-password">Password:</label>
-      <input type="password" name="r-password"/>
-      <button type="button" onclick="">Register</button>
+      <input type="password" name="r-password" id="registerPassword"/>
+      <button type="button" onclick="doRegister()">Register</button>
       <div>Already have an account?</div>
       <a onclick="switchIndexForm(1)">Login</a>
     </form>
+  </div>
+  <div class = "c">
+    <div class = "c c1"></div>
+    <div class = "c c2"></div>
+    
+    <div class = "sun" id = "circle">
+    </div>
+    <div class = "mountain">
+    </div>
+    <div class = "water">
+    </div>
   </div>
 </body>
 </html>

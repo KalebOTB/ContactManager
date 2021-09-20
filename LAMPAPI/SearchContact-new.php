@@ -6,6 +6,7 @@
 	$searchCount = 0;
     $id = 0;
 
+
 	$conn = new mysqli("localhost", "TheManager", "COP4331", "ContactManager");
 	if ($conn->connect_error) 
 	{
@@ -14,7 +15,7 @@
 	} 
 	else
 	{
-		$stmt = $conn->prepare("SELECT firstName, ID FROM List WHERE firstName LIKE ? AND lastName LIKE ? AND email LIKE ? AND phoneNumber LIKE ? AND UserID=?");
+		$stmt = $conn->prepare("SELECT firstName, lastName, ID FROM List WHERE firstName LIKE ? AND lastName LIKE ? AND email LIKE ? AND phoneNumber LIKE ? AND UserID=?");
 		$contactFirst = "%" . $inData["first"] . "%";
 		$contactLast = "%" . $inData["last"] . "%";
 		$contactEmail = "%" . $inData["email"] . "%";
@@ -31,7 +32,7 @@
 				$searchResults .= ",";
 			}
 			$searchCount++;
-			$searchResults .= '"' . $row["firstName"] . ' ' . $row["ID"] . '"';
+			$searchResults .= '"' . $row["firstName"] . ' ' . $row["lastName"] . ' ' . $row["ID"] . '"';
 		}
 
 		$stmt->close();

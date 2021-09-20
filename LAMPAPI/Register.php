@@ -19,12 +19,13 @@
 		$sql = "INSERT INTO Users (FirstName,LastName,Email,PhoneNumber,Login,Password)
 		VALUES('$firstname', '$lastname', '$email', '$phonenumber', '$login', '$password')";
 		
-		if ($conn->query($sql) === TRUE) {
-			echo "New user created successfully", "\n";
-		} 
-		else {
+		if ($conn->query($sql) === FALSE) {
 			echo "Error: " . $sql . "<br>" . $conn->error;
-		}
+			//echo "New user created successfully", "\n";
+		} 
+		//else {
+			//echo "Error: " . $sql . "<br>" . $conn->error;
+		//}
 		$stmt = $conn->prepare("SELECT ID FROM Users WHERE Login=? AND Password =?");
 		$stmt->bind_param("ss", $login, $password);
 		$stmt->execute();
@@ -32,7 +33,7 @@
 
 		if( $row = $result->fetch_assoc()  )
 		{
-			returnWithInfo( $row['ID']);
+			returnWithInfo( $row['ID'] );
 		}
 		else
 		{
@@ -41,7 +42,7 @@
 
 		$stmt->close();
 		$conn->close();
-		returnWithError("");
+		//returnWithError("");
 	}
 
 	function getRequestInfo()
@@ -62,7 +63,7 @@
 	}
 	function returnWithInfo( $id )
 	{
-		$retValue = '{"id":' . $id . '}';
+		$retValue = '{"id":' . $id . ', "error":"", "message":"New user created successfully"}';
 		sendResultInfoAsJson( $retValue );
 	}
 	
